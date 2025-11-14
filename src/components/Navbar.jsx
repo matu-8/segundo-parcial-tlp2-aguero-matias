@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export const Navbar = () => {
   // TODO: Obtener datos del usuario desde /api/profile
   // TODO: Implementar función handleLogout con POST a /api/logout usando credentials: 'include'
@@ -20,6 +22,10 @@ export const Navbar = () => {
           <button
             onClick={() => {
               // TODO: Implementar handleLogout aquí
+              const handleLogout = () => {
+                const logout = fetch('http://localhost:3000/api')
+                
+              }
             }}
             className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition-colors font-medium"
           >

@@ -1,10 +1,17 @@
 import { Link } from "react-router";
+import { useForm } from "../hooks/useForm";
 
 export const RegisterPage = () => {
   // TODO: Integrar lógica de registro aquí
   // TODO: Implementar useForm para el manejo del formulario
   // TODO: Implementar función handleSubmit
+  
+  const { formState, handleChange, handleReset } = useForm();
+  const { username, email, password, name, lastname } = formState;
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-8">
       <div className="max-w-lg w-full bg-white rounded-lg shadow-xl p-8">
@@ -19,7 +26,11 @@ export const RegisterPage = () => {
           </p>
         </div>
 
-        <form onSubmit={(event) => {}}>
+        <form
+          onSubmit={(event) => {
+            handleSubmit;
+          }}
+        >
           <div className="mb-4">
             <label
               htmlFor="username"
@@ -31,6 +42,8 @@ export const RegisterPage = () => {
               type="text"
               id="username"
               name="username"
+              onChange={handleChange}
+              value={username}
               placeholder="Elige un nombre de usuario"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
               required
@@ -48,6 +61,8 @@ export const RegisterPage = () => {
               type="email"
               id="email"
               name="email"
+              onChange={handleChange}
+              value={email}
               placeholder="tu@email.com"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
               required
@@ -65,6 +80,8 @@ export const RegisterPage = () => {
               type="password"
               id="password"
               name="password"
+              onChange={handleChange}
+              value={password}
               placeholder="Crea una contraseña segura"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
               required
@@ -82,6 +99,8 @@ export const RegisterPage = () => {
               type="text"
               id="name"
               name="name"
+              onChange={handleChange}
+              value={name}
               placeholder="Tu nombre"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
               required
@@ -99,6 +118,8 @@ export const RegisterPage = () => {
               type="text"
               id="lastname"
               name="lastname"
+              onChange={handleChange}
+              value={lastname}
               placeholder="Tu apellido"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
               required

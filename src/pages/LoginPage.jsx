@@ -4,6 +4,7 @@ export const LoginPage = () => {
   // TODO: Integrar lógica de autenticación aquí
   // TODO: Implementar useForm para el manejo del formulario
   // TODO: Implementar función handleSubmit
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-8">
